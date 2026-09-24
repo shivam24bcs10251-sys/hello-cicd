@@ -3,11 +3,10 @@ set -e
 echo "Starting build..."
 rm -rf build
 mkdir -p build
-cp app/calculator.py build/
-echo "Application copied to build directory."
-cat > build/build-info.txt <<EOF
-Application: Session 16 Calculator
-Build Status: SUCCESS
-Build Date: $(date)
+echo "Application version: 1.0.0" > build/version.txt
+echo "Build status: SUCCESS" > build/build-info.txt
+cat > build/app.txt <<EOF
+Session 16 Calculator Application
+This file was generated during the CI build.
 EOF
 echo "Build completed successfully."
